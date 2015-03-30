@@ -59,7 +59,7 @@
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController id="H1p-Uh-vWS" customClass="MDSplitViewController" customModule="roadOfStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="APl-i0-pzu"/>
                     <connections>
@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="904" y="-574"/>
         </scene>
-        <!--Root View Controller-->
+        <!--MainViewController-->
         <scene sceneID="lf9-iA-f9h">
             <objects>
-                <tableViewController id="kAy-sh-426" sceneMemberID="viewController">
+                <tableViewController id="kAy-sh-426" userLabel="MainViewController" customClass="MainViewController" customModule="roadOfStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="40" sectionFooterHeight="22" id="kjw-8K-tO5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6e4-Ha-TSK" kind="show" id="9l2-KE-rL6"/>
+                                            <segue destination="6e4-Ha-TSK" kind="show" identifier="MasterDetail" id="9l2-KE-rL6"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Pf1-Fc-APf">
@@ -165,7 +165,7 @@
                             <outlet property="delegate" destination="kAy-sh-426" id="soX-kK-6dL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="R22-BT-km0"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="R22-BT-km0" userLabel="MainViewController"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzy-0Z-R91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
