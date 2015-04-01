@@ -14,12 +14,13 @@ class MDSplitViewController: UISplitViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    
-//        let splitViewController = self.window!.rootViewController as UISplitViewController
-//        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
-//        navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-//        splitViewController.delegate = self
-
+        
+        self
+        
+        if let viewControllers = self.navigationController?.viewControllers
+        {
+            NSLog("the viewControlls %@", viewControllers)
+        }
         
     }
 
@@ -39,16 +40,18 @@ class MDSplitViewController: UISplitViewController {
     }
     */
     
-    func MDSplitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
-        if let secondaryAsNavController = secondaryViewController as? UINavigationController {
-            if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
-                if topAsDetailController.detailItem == nil {
-                    // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-                    return true
-                }
-            }
-        }
-        return false
-    }
+//    func MDSplitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
+//        if let secondaryAsNavController = secondaryViewController as? UINavigationController {
+//            if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
+//                if topAsDetailController.detailItem == nil {
+//                    // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+//                    return true
+//                }
+//            }
+//        }
+//        return false
+//    }
+    
+    
 
 }
