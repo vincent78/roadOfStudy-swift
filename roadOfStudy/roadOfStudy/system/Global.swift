@@ -47,29 +47,87 @@ func logError(info:String){
 
 
 
+
 /**
 *  @brief  本地相关的单例
 */
-class Global: NSObject {
+class Global {
     
     // MARK: 单例的定义
-    /**
-    单例
     
-    :returns: Global的实例
-    */
     class func shareInstance()->Global{
-        struct UKSingleton{
+        struct Singleton{
             static var predicate:dispatch_once_t = 0
             static var instance:Global? = nil
         }
-        dispatch_once(&UKSingleton.predicate,{
-                UKSingleton.instance=Global()
+        dispatch_once(&Singleton.predicate,{
+                Singleton.instance = Global()
         })
-        return UKSingleton.instance!
+        return Singleton.instance!
     }
     
-    // MARK:
+    // MARK: 系统信息
     
+    /// 内部保存的变量
+    private var sysInfoTmp:String?
+    
+    var sysInfo : String {
+        get {
+                if (sysInfoTmp == nil){
+                    sysInfoTmp = FTJsonUtil.toJSONString( getDeviceInfo() );
+                }
+                return sysInfoTmp!
+        }
+    }
+    
+    func resetSysInfo() {
+        
+        logInfo("--resetSysInfo!")
+        
+        sysInfoTmp = nil
+    }
+    
+    
+    
+    /**
+    获取设备的数据
+    
+    :returns: <#return value description#>
+    */
+    func getDeviceInfo() -> Dictionary<String,String> {
+        var infoDic:Dictionary<String , String> = [:]
+        //获取设备名称
+        infoDic["name"] = UIDevice.currentDevice().name
+        //获取设备系统名称
+        infoDic["systemName"] = UIDevice.currentDevice().systemName
+        //获取系统版本
+        infoDic["systemVersion"] = UIDevice.currentDevice().systemVersion
+        //获取设备模型
+        infoDic["model"] = UIDevice.currentDevice().model
+        //获取设备本地模型
+        infoDic["localizedModel"] = UIDevice.currentDevice().localizedModel
+        
+        
+        let mainBundleInfoDict = NSBundle.mainBundle().infoDictionary
+        if let info = mainBundleInfoDict? {
+            // app名称
+            infoDic["CFBundleName"] = info["CFBundleName"] as String!
+            // app版本
+            infoDic["CFBundleShortVersionString"] = info["CFBundleShortVersionString"] as String!
+            // app build版本
+            infoDic["CFBundleVersion"] = info["CFBundleVersion"] as String!
+        }
+        
+        //ip地址
+        infoDic["IPAddr"] = GlobalOC.getIPAddress()
+        
+        logInfo("--generate the device info :\n\(infoDic)")
+        
+        return infoDic;
+    }
+    
+    
+
+
     
 }

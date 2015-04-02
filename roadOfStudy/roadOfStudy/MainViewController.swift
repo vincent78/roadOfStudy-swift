@@ -18,6 +18,14 @@ class MainViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+//        logInfo(Global.shareInstance().sysInfo)
+//        
+//        Global.shareInstance().resetSysInfo()
+//        
+//        logInfo(Global.shareInstance().sysInfo)
+        
     }
 
     override func didReceiveMemoryWarning() {

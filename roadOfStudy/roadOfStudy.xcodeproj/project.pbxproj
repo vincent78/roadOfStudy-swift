@@ -17,6 +17,8 @@
 		BFBC673B1AC8F7F50045D408 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC673A1AC8F7F50045D408 /* MainViewController.swift */; };
 		BFBC673E1AC90F970045D408 /* MDSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC673D1AC90F970045D408 /* MDSplitViewController.swift */; };
 		BFFD55211ACCE92400D8C7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD55201ACCE92400D8C7D7 /* Global.swift */; };
+		BFFD55251ACD1B2A00D8C7D7 /* GlobalOC.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFD55241ACD1B2A00D8C7D7 /* GlobalOC.m */; };
+		BFFD55291ACD23F900D8C7D7 /* FTJsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD55281ACD23F900D8C7D7 /* FTJsonUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,11 @@
 		BFBC673A1AC8F7F50045D408 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BFBC673D1AC90F970045D408 /* MDSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDSplitViewController.swift; sourceTree = "<group>"; };
 		BFFD55201ACCE92400D8C7D7 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		BFFD55221ACD1B2A00D8C7D7 /* system-bridge-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "system-bridge-header.h"; sourceTree = "<group>"; };
+		BFFD55231ACD1B2A00D8C7D7 /* GlobalOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalOC.h; sourceTree = "<group>"; };
+		BFFD55241ACD1B2A00D8C7D7 /* GlobalOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalOC.m; sourceTree = "<group>"; };
+		BFFD55261ACD1E1700D8C7D7 /* bridge-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridge-header.h"; sourceTree = "<group>"; };
+		BFFD55281ACD23F900D8C7D7 /* FTJsonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTJsonUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 		BFAEBB771AC3E8AB00DC0695 /* roadOfStudy */ = {
 			isa = PBXGroup;
 			children = (
+				BFFD55271ACD23CC00D8C7D7 /* utils */,
 				BFFD551F1ACCE8E500D8C7D7 /* system */,
 				BFB351591ACA35BF0022E023 /* objc */,
 				BFBC673C1AC90EDD0045D408 /* MasterDetail */,
@@ -94,6 +102,7 @@
 				BFAEBB851AC3E8AB00DC0695 /* LaunchScreen.xib */,
 				BFAEBB781AC3E8AB00DC0695 /* Supporting Files */,
 				BFBC673A1AC8F7F50045D408 /* MainViewController.swift */,
+				BFFD55261ACD1E1700D8C7D7 /* bridge-header.h */,
 			);
 			path = roadOfStudy;
 			sourceTree = "<group>";
@@ -143,9 +152,20 @@
 		BFFD551F1ACCE8E500D8C7D7 /* system */ = {
 			isa = PBXGroup;
 			children = (
+				BFFD55231ACD1B2A00D8C7D7 /* GlobalOC.h */,
+				BFFD55241ACD1B2A00D8C7D7 /* GlobalOC.m */,
+				BFFD55221ACD1B2A00D8C7D7 /* system-bridge-header.h */,
 				BFFD55201ACCE92400D8C7D7 /* Global.swift */,
 			);
 			path = system;
+			sourceTree = "<group>";
+		};
+		BFFD55271ACD23CC00D8C7D7 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD55281ACD23F900D8C7D7 /* FTJsonUtil.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +272,8 @@
 				BFAEBB7D1AC3E8AB00DC0695 /* MasterViewController.swift in Sources */,
 				BFFD55211ACCE92400D8C7D7 /* Global.swift in Sources */,
 				BFAEBB7B1AC3E8AB00DC0695 /* AppDelegate.swift in Sources */,
+				BFFD55251ACD1B2A00D8C7D7 /* GlobalOC.m in Sources */,
+				BFFD55291ACD23F900D8C7D7 /* FTJsonUtil.swift in Sources */,
 				BFBC673E1AC90F970045D408 /* MDSplitViewController.swift in Sources */,
 				BFBC673B1AC8F7F50045D408 /* MainViewController.swift in Sources */,
 			);
@@ -378,10 +400,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = roadOfStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "roadOfStudy/bridge-header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -389,10 +414,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = roadOfStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "roadOfStudy/bridge-header.h";
 			};
 			name = Release;
 		};
