@@ -16,6 +16,7 @@
 		BFAEBB931AC3E8AB00DC0695 /* roadOfStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEBB921AC3E8AB00DC0695 /* roadOfStudyTests.swift */; };
 		BFBC673B1AC8F7F50045D408 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC673A1AC8F7F50045D408 /* MainViewController.swift */; };
 		BFBC673E1AC90F970045D408 /* MDSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC673D1AC90F970045D408 /* MDSplitViewController.swift */; };
+		BFFD55211ACCE92400D8C7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD55201ACCE92400D8C7D7 /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		BFAEBB921AC3E8AB00DC0695 /* roadOfStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roadOfStudyTests.swift; sourceTree = "<group>"; };
 		BFBC673A1AC8F7F50045D408 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BFBC673D1AC90F970045D408 /* MDSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDSplitViewController.swift; sourceTree = "<group>"; };
+		BFFD55201ACCE92400D8C7D7 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		BFAEBB771AC3E8AB00DC0695 /* roadOfStudy */ = {
 			isa = PBXGroup;
 			children = (
+				BFFD551F1ACCE8E500D8C7D7 /* system */,
 				BFB351591ACA35BF0022E023 /* objc */,
 				BFBC673C1AC90EDD0045D408 /* MasterDetail */,
 				BFAEBB7A1AC3E8AB00DC0695 /* AppDelegate.swift */,
@@ -135,6 +138,14 @@
 				BFBC673D1AC90F970045D408 /* MDSplitViewController.swift */,
 			);
 			path = MasterDetail;
+			sourceTree = "<group>";
+		};
+		BFFD551F1ACCE8E500D8C7D7 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD55201ACCE92400D8C7D7 /* Global.swift */,
+			);
+			path = system;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			files = (
 				BFAEBB7F1AC3E8AB00DC0695 /* DetailViewController.swift in Sources */,
 				BFAEBB7D1AC3E8AB00DC0695 /* MasterViewController.swift in Sources */,
+				BFFD55211ACCE92400D8C7D7 /* Global.swift in Sources */,
 				BFAEBB7B1AC3E8AB00DC0695 /* AppDelegate.swift in Sources */,
 				BFBC673E1AC90F970045D408 /* MDSplitViewController.swift in Sources */,
 				BFBC673B1AC8F7F50045D408 /* MainViewController.swift in Sources */,

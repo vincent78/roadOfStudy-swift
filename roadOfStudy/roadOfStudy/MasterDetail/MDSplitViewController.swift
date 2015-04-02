@@ -15,19 +15,51 @@ class MDSplitViewController: UISplitViewController {
 
         // Do any additional setup after loading the view.
         
-        self
         
         if let viewControllers = self.navigationController?.viewControllers
         {
-            NSLog("the viewControlls %@", viewControllers)
+//            NSLog("the viewControlls %@", viewControllers)
+            
+            logWarn("the viewControlls \(viewControllers)")
         }
         
+        NSLog("the viewControlls %@", self.viewControllers)
+
+        
+        if let primaryNavigationController = self.viewControllers[0] as? UINavigationController
+        {
+            NSLog("the primaryNavigationController's view :%@",primaryNavigationController.viewControllers)
+            
+            if let masterViewController = primaryNavigationController.topViewController as? MasterViewController
+            {
+                masterViewController.navigationItem.leftBarButtonItem = self.displayModeButtonItem()
+
+            }
+            
+
+        }
+       
+
+        
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+        
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    
+    
     
 
     /*
