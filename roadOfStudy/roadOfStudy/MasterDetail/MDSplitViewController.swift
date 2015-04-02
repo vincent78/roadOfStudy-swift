@@ -20,7 +20,7 @@ class MDSplitViewController: UISplitViewController {
         {
 //            NSLog("the viewControlls %@", viewControllers)
             
-            logWarn("the viewControlls \(viewControllers)")
+            logDebug("the viewControlls", "\(viewControllers)")
         }
         
         NSLog("the viewControlls %@", self.viewControllers)

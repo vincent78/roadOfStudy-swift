@@ -19,27 +19,27 @@ import UIKit
 
 enum LogLevel:Int {
     case info   = 1
-    case warn   = 4
+    case debug   = 4
     case error  = 7
 }
 
 let SYS_LOG_LEVEL:LogLevel = LogLevel.info
 
-func logInfo(info:String){
+func logInfo(title:String, info:String){
     if SYS_LOG_LEVEL.rawValue >= LogLevel.info.rawValue {
-        println(info)
+        println("-- \(title)\n\(info)")
     }
 }
 
-func logWarn(info:String){
-    if (SYS_LOG_LEVEL.rawValue >= LogLevel.warn.rawValue ) {
-        println(info)
+func logDebug(title:String, info:String){
+    if (SYS_LOG_LEVEL.rawValue >= LogLevel.debug.rawValue ) {
+        println("== \(title)\n\(info)")
     }
 }
 
-func logError(info:String){
+func logError(title:String, info:String){
     if (SYS_LOG_LEVEL.rawValue >= LogLevel.error.rawValue){
-        println(info)
+        println("** \(title)\n\(info)")
     }
 }
 
@@ -82,7 +82,7 @@ class Global {
     
     func resetSysInfo() {
         
-        logInfo("--resetSysInfo!")
+        logInfo("resetSysInfo!","")
         
         sysInfoTmp = nil
     }
@@ -121,7 +121,7 @@ class Global {
         //ip地址
         infoDic["IPAddr"] = GlobalOC.getIPAddress()
         
-        logInfo("--generate the device info :\n\(infoDic)")
+        logInfo("generate the device info","\(infoDic)")
         
         return infoDic;
     }
