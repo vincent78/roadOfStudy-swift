@@ -8,14 +8,9 @@
 
 import UIKit
 
-/**
-打印出log信息
-
-:param: info <#info description#>
-*/
 
 
-
+// MARK: 日志相关
 
 enum LogLevel:Int {
     case info   = 1
@@ -43,6 +38,24 @@ func logError(title:String, info:String){
     }
 }
 
+
+// MARK: 系统变量
+
+let kScreen_Height  = UIScreen.mainScreen().bounds.height
+let kScreen_Width   = UIScreen.mainScreen().bounds.width
+let kScreen_Frame   = UIScreen.mainScreen().bounds
+
+// MARK: 线程
+
+func gcd_Main( doBlock: ()->Void){
+    dispatch_async(dispatch_get_main_queue(),doBlock)
+}
+
+
+func gcd_Back(doBlock: ()->Void){
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        , doBlock)
+}
 
 
 
